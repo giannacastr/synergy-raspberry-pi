@@ -1,0 +1,6 @@
+Requirement issues:
+- Needs ASCII for board generation
+
+Other Issues:
+Error after manual ship placement
+- after "Input a coordinate to sail your ship: "
