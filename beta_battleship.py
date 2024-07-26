@@ -1140,12 +1140,25 @@ def missileLaunchMiss():
 # Converts a number to a letter
 
 def strConvert(col):
-    keys = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-    if col in keys:
-        newCol = keys.index(col)
+    keys = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
-
-    # newCol = keys[col]
+    if type(col) == str:
+        # If col is a string, find its index in the keys list
+        if col in keys:
+            newCol = keys.index(col)
+        else:
+            # Handle the case where the string is not in keys
+            raise ValueError("Invalid column value: " + col)
+    elif type(col) == int:
+        # If col is an integer, use it as an index to get the corresponding letter
+        if 0 <= col < len(keys):
+            newCol = col
+        else:
+            # Handle the case where the integer is out of range
+            raise ValueError("Invalid column index: " + str(col))
+    else:
+        # Handle the case where col is neither a string nor an integer
+        raise ValueError("Invalid column type: " + str(col))
 
     return newCol
 
