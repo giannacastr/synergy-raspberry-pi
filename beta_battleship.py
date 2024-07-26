@@ -415,8 +415,10 @@ def createDest(gridSize, placementType, board, player, shipID1, shipID2):
             # Converts coordinates to indexes, Letter[0] & number[1]
             shipLoc = input("Input a coordinate to sail your ship: ")
             parkedShip = shipLoc.split(",")
+
             xLetter = parkedShip[0]
             yNumber = int(parkedShip[1])
+            # yNumber = parkedShip[1]
 
             # Formats the coordinates & adds them to the destroyer list
             str_correlate = f"({xLetter},{yNumber})"
@@ -1139,8 +1141,11 @@ def missileLaunchMiss():
 
 def strConvert(col):
     keys = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+    if col in keys:
+        newCol = keys.index(col)
 
-    newCol = keys[col]
+
+    # newCol = keys[col]
 
     return newCol
 
