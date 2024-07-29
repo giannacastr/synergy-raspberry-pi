@@ -433,8 +433,8 @@ def createDest(gridSize, placementType, board, player, shipID1, shipID2):
 
             newCol = strConvert(xLetter2)
             board[newCol][yNumber2 -1] = Fore.GREEN + "#" + Fore.RESET
-            coordlist = [(str_correlate,str_correlate2)]
-            shipID2[destName] = coordlist
+            coordlist = [str_correlate,str_correlate2]
+            shipID1[destName] = coordlist
             print(shipID1)
             return destName
 
@@ -534,7 +534,7 @@ def createDest(gridSize, placementType, board, player, shipID1, shipID2):
                         xLetter2 = strConvert(generateX)
                         str_correlate2 = f"({xLetter2},{generateY - 1})"
 
-            coordlist2 = [(str_correlate,str_correlate2)]
+            coordlist2 = [str_correlate,str_correlate2]
             shipID2[destName2] = coordlist2
             return destName2
 
@@ -1174,7 +1174,7 @@ def wincond(gooping, shipID1, shipID2, destName, destName2, subName, subName2):
     p1SubSunk = shipID2.get(subName2)
     p2DestSunk = shipID1.get(destName)
     p2SubSunk = shipID1.get(subName)
-
+    
     if len(p1DestSunk) == 0:
 
         print(f"{destName2} is sunk! ")
