@@ -3,6 +3,7 @@ import os
 import sys
 import time
 from colorama import Fore, Back, Style
+from ship_animations import ship_animation
 
 # Creates a board for the player or computer
 
@@ -101,7 +102,7 @@ def bombTarget(userBomb, board, player, shipID1, shipID2, destName, destName2, s
                 ""
             else:
 
-                missileLaunchStrike()
+                ship_animation(1)
                 counter += 1
 
             printBoard(board)
@@ -117,7 +118,7 @@ def bombTarget(userBomb, board, player, shipID1, shipID2, destName, destName2, s
                 ""
             else:
 
-                missileLaunchStrike()
+                ship_animation(1)
                 counter += 1
 
             printBoard(board)
@@ -131,7 +132,7 @@ def bombTarget(userBomb, board, player, shipID1, shipID2, destName, destName2, s
             if counter > 0:
                 ""
             else:
-                missileLaunchMiss()
+                ship_animation(0)
                 counter += 1
 
             printBoard(board)
@@ -143,7 +144,7 @@ def bombTarget(userBomb, board, player, shipID1, shipID2, destName, destName2, s
             if counter > 0:
                 ""
             else:
-                missileLaunchMiss()
+                ship_animation(0)
                 counter += 1
 
             printBoard(board)
@@ -163,7 +164,7 @@ def bombTarget(userBomb, board, player, shipID1, shipID2, destName, destName2, s
 
             board[bombX][bombY - 1] = Fore.RED + "~" + Fore.RESET
             scoordlist2.remove(placeholdc)
-            missileLaunchStrike()
+            ship_animation(1)
             print("\nThe Computer Hit!")
             shipID1.update({destName: scoordlist2})
             
@@ -171,20 +172,20 @@ def bombTarget(userBomb, board, player, shipID1, shipID2, destName, destName2, s
 
             board[bombX][bombY - 1] = Fore.RED + "~" + Fore.RESET
             sscoordlist2.remove(placeholdc)
-            missileLaunchStrike()
+            ship_animation(1)
             print("\nThe Computer Hit!")
             shipID2.update({subName2: sscoordlist2})
 
         elif placeholdc not in scoordlist2:
 
             board[bombX][bombY] = Fore.CYAN + "X" + Fore.RESET
-            missileLaunchMiss()
+            ship_animation(0)
             print("\nThe Computer Missed!\n")
         
         elif placeholdc not in sscoordlist2:
 
             board[bombX][bombY] = Fore.CYAN + "X" + Fore.RESET
-            missileLaunchMiss()
+            ship_animation(0)
             print("\nThe Computer Missed!\n")
         
 
@@ -1010,132 +1011,6 @@ def createSub(gridSize, placementType, board, player, shipID1, shipID2):
             shipID2.update({subName2: coordlist2})
             return subName2
 
-# Animations for a hit on a ship
-
-def missileLaunchStrike():
-        
-        print("""     
-         -}===>
-        """)
-
-        time.sleep(.3)
-
-        print("""     
-            ---}===>
-        """)
-
-        time.sleep(.3)
-
-        print("""     
-              -----}===>
-        """)
-
-        time.sleep(.3)
-
-        print("""
-                                  ___|___
-                -------}===>      |     |
-                                  |_____/""")
-        
-        time.sleep(.3)
-
-        print("""
-                                  ___|___
-                  ---------}===>  |     |
-                                  |_____/""")
-        
-        time.sleep(.3)
-
-        print("""
-                                  ___|___
-                  ---------BOOOMM )     |
-                                  |_____/""")
-
-# Animations for a miss 
-
-def missileLaunchMiss():
-
-    fiftychance = random.randint(0,1)
-
-    if fiftychance == 1:
-
-        print("""     
-         -}===>
-        """)
-
-        time.sleep(.3)
-
-        print("""     
-         ---}===>
-        """)
-
-        time.sleep(.3)
-
-        print("""     
-         -----}===>
-        """)
-
-        time.sleep(.3)
-
-        print("""      
-                           /     |
-         -------}===>   __/       |
-                       /           |
-        """)
-
-        time.sleep(.3)
-
-        print("""
-                           /     |
-         ---------}===> __/       |
-                       /           |
-        """)
-
-        time.sleep(.3)
-
-        print("""           
-                         (        )
-         --------------(   BOOM!   )
-                         (        )
-        """)
-
-        print("\nThe missile struck an innocent island...")
-
-    else:
-
-        print("""     
-         -}===>
-        """)
-
-        time.sleep(.3)
-
-        print("""     
-         ---}===>
-        """)
-
-        time.sleep(.3)
-
-        print("""     
-         -----}===>
-        """)
-
-        time.sleep(.3)
-
-        print("""      
-                        
-         -------}===>  
-                
-        """)
-
-        time.sleep(.3)
-
-        print("""           
-                          (~~~~~~~~~)
-        ------------}===>(~~~~~~~~~~~~)
-                          (~~ >(^) ~~)
-        """)
-
-        print("\nTHE POOR FISHIES")   
 
 # Converts a number to a letter
 
