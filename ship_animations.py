@@ -11,6 +11,7 @@ def ship_animation(call):
         fiftychance = random.randint(0,1)
 
         if fiftychance == 1:
+            os.system('cls' if os.name == 'nt' else 'clear')
 
             print("""     
             -}===>
@@ -18,18 +19,21 @@ def ship_animation(call):
 
             time.sleep(.3)
 
+            os.system('cls' if os.name == 'nt' else 'clear')
             print("""     
             ---}===>
             """)
 
             time.sleep(.3)
 
+            os.system('cls' if os.name == 'nt' else 'clear')
             print("""     
             -----}===>
             """)
 
             time.sleep(.3)
 
+            os.system('cls' if os.name == 'nt' else 'clear')
             print("""      
                             /     |
             -------}===>   __/       |
@@ -38,6 +42,7 @@ def ship_animation(call):
 
             time.sleep(.3)
 
+            os.system('cls' if os.name == 'nt' else 'clear')
             print("""
                             /     |
             ---------}===> __/       |
@@ -46,6 +51,7 @@ def ship_animation(call):
 
             time.sleep(.3)
 
+            os.system('cls' if os.name == 'nt' else 'clear')
             print("""           
                             (        )
             --------------(   BOOM!   )
@@ -55,25 +61,29 @@ def ship_animation(call):
             print("\nThe missile struck an innocent island...")
 
         else:
-
+            
+            os.system('cls' if os.name == 'nt' else 'clear')
             print("""     
             -}===>
             """)
 
             time.sleep(.3)
 
+            os.system('cls' if os.name == 'nt' else 'clear')
             print("""     
             ---}===>
             """)
 
             time.sleep(.3)
 
+            os.system('cls' if os.name == 'nt' else 'clear')
             print("""     
             -----}===>
             """)
 
             time.sleep(.3)
 
+            os.system('cls' if os.name == 'nt' else 'clear')
             print("""      
                             
             -------}===>  
@@ -82,51 +92,53 @@ def ship_animation(call):
 
             time.sleep(.3)
 
+            os.system('cls' if os.name == 'nt' else 'clear')
             print("""           
                             (~~~~~~~~~)
             ------------}===>(~~~~~~~~~~~~)
                             (~~ >(^) ~~)
             """)
 
+            os.system('cls' if os.name == 'nt' else 'clear')
             print("\nTHE POOR FISHIES")  
 
 
     if call == 1:
 
         # animation for ship hit
-
+        os.system('cls' if os.name == 'nt' else 'clear')
         print("""     
          -}===>
         """)
 
         time.sleep(.3)
-
+        os.system('cls' if os.name == 'nt' else 'clear')
         print("""     
             ---}===>
         """)
 
         time.sleep(.3)
-
+        os.system('cls' if os.name == 'nt' else 'clear')
         print("""     
               -----}===>
         """)
 
         time.sleep(.3)
-
+        os.system('cls' if os.name == 'nt' else 'clear')
         print("""
                                   ___|___
                 -------}===>      |     |
                                   |_____/""")
         
         time.sleep(.3)
-
+        os.system('cls' if os.name == 'nt' else 'clear')
         print("""
                                   ___|___
                   ---------}===>  |     |
                                   |_____/""")
         
         time.sleep(.3)
-
+        os.system('cls' if os.name == 'nt' else 'clear')
         print("""
                                   ___|___
                   ---------BOOOMM )     |
