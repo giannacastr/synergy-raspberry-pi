@@ -80,7 +80,7 @@ def bombTarget(userBomb, board, player, shipID1, shipID2, destName, destName2, s
             bombTarget(userBomb, board, player, shipID1, shipID2, destName, destName2, subName, subName2)
 
         placehold = f"({xPos},{yPos})"
-        xLetter = reverseConvert(xPos)
+        xLetter = strConvert(xPos)
 
         if board[xLetter][yPos - 1] == Fore.CYAN + "X" + Fore.RESET or board[xLetter][yPos - 1] == Fore.RED + "~" + Fore.RESET:
             
@@ -852,7 +852,7 @@ def createSub(gridSize, placementType, board, player, shipID1, shipID2):
 
             # Formats the coordinates & adds them to the ship list
             str_correlate = f"({xLetter},{yNumber})"
-            newCol = reverseConvert(xLetter)
+            newCol = strConvert(xLetter)
 
             if board[newCol][yNumber] == Fore.GREEN + "#" + Fore.RESET:
 
@@ -866,7 +866,7 @@ def createSub(gridSize, placementType, board, player, shipID1, shipID2):
             yNumber2 = int(parkedShip2[1])
             str_correlate2 = f"({xLetter2},{yNumber})"
 
-            newCol = reverseConvert(xLetter2)
+            newCol = strConvert(xLetter2)
 
             if board[newCol][yNumber2] == Fore.GREEN + "#" + Fore.RESET:
 
@@ -1142,18 +1142,22 @@ def missileLaunchMiss():
 def strConvert(col):
     keys = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
-    if type(col) == str:
+    if str(col).isalpha() == True:
+            
         # If col is a string, find its index in the keys list
-        if col in keys:
-            newCol = keys.index(col)
-        else:
+        try: 
+
+            newCol = keys.index(col.capitalize())
+        except: 
             # Handle the case where the string is not in keys
             raise ValueError("Invalid column value: " + col)
-    elif type(col) == int:
+    
+    elif str(col).isnumeric() == True:
+
         # If col is an integer, use it as an index to get the corresponding letter
-        if 0 <= col < len(keys):
-            newCol = col
-        else:
+        try:
+            newCol = chr(col + 65)
+        except:
             # Handle the case where the integer is out of range
             raise ValueError("Invalid column index: " + str(col))
     else:
@@ -1195,14 +1199,6 @@ def wincond(gooping, shipID1, shipID2, destName, destName2, subName, subName2):
         gooping = False
         print("The Computer Wins!")
     return gooping
-
-def reverseConvert(col):
-
-    keys = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-
-    newCol = keys.index(col)
-
-    return newCol
 
 gooping = True
 
@@ -1279,6 +1275,7 @@ while(gooping):
 
     userBomb = input(f"\n{player}, Please select a section to hit with your artillery: ")
     bombTarget(userBomb, board, player,shipID1, shipID2, destName, destName2, subName, subName2)
+    printBoard(board)
     gooping = wincond(gooping, shipID1, shipID2, destName, destName2, subName, subName2)
 
     if gooping == False:
@@ -1294,6 +1291,7 @@ while(gooping):
     time.sleep(1)
 
     bombTarget(userBomb, grid, player,shipID1, shipID2, destName, destName2, subName, subName2)
+    printBoard(board)
     gooping = wincond(gooping ,shipID1, shipID2, destName, destName2, subName, subName2)
     
     if gooping == False:
