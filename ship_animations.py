@@ -4,7 +4,10 @@ from colorama import init, Fore, Style
 import time
 
 def ship_animation(call):
-    if call == missileLaunchMiss:
+
+    # animation for missed shot
+
+    if call == 0:
         fiftychance = random.randint(0,1)
 
         if fiftychance == 1:
@@ -88,7 +91,10 @@ def ship_animation(call):
             print("\nTHE POOR FISHIES")  
 
 
-    if call == missileLaunchStrike:
+    if call == 1:
+
+        # animation for ship hit
+
         print("""     
          -}===>
         """)
