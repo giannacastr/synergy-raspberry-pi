@@ -105,7 +105,6 @@ def bombTarget(userBomb, board, player, shipID1, shipID2, destName, destName2, s
                 ship_animation(1)
                 counter += 1
 
-            printBoard(board)
             print("\nYou Hit!")
             shipID2.update({destName2: scoordlist})
             
@@ -121,7 +120,6 @@ def bombTarget(userBomb, board, player, shipID1, shipID2, destName, destName2, s
                 ship_animation(1)
                 counter += 1
 
-            printBoard(board)
             print("\nYou Hit!")
             shipID2.update({subName2: sscoordlist})
         
@@ -135,7 +133,7 @@ def bombTarget(userBomb, board, player, shipID1, shipID2, destName, destName2, s
                 ship_animation(0)
                 counter += 1
 
-            printBoard(board)
+   
         
         elif placehold not in sscoordlist:
 
@@ -147,7 +145,7 @@ def bombTarget(userBomb, board, player, shipID1, shipID2, destName, destName2, s
                 ship_animation(0)
                 counter += 1
 
-            printBoard(board)
+         
  
     elif player == "Player 2":
 
@@ -216,7 +214,6 @@ def createDest(gridSize, placementType, board, player, shipID1, shipID2):
                     xLetter2 = strConvert(generateX + 1)
                     str_correlate2 = f"({xLetter2},{generateY})"
 
-                    printBoard(board)
 
                 elif generateX == (gridSize - 1):
 
@@ -225,7 +222,7 @@ def createDest(gridSize, placementType, board, player, shipID1, shipID2):
                     xLetter2 = strConvert(generateX - 1)
                     str_correlate2 = f"({xLetter2},{generateY})"
                     
-                    printBoard(board)
+   
 
                 else:
                     
@@ -240,7 +237,7 @@ def createDest(gridSize, placementType, board, player, shipID1, shipID2):
                         xLetter2 = strConvert(generateX - 1)
                         str_correlate2 = f"({xLetter2},{generateY})"
                         
-                        printBoard(board)
+                 
 
                     elif toporbottom == 1:
 
@@ -250,7 +247,7 @@ def createDest(gridSize, placementType, board, player, shipID1, shipID2):
                         xLetter2 = strConvert(generateX + 1)
                         str_correlate2 = f"({xLetter2},{generateY})"
                         
-                        printBoard(board)
+                     
 
             elif orientation == 0:
 
@@ -263,7 +260,7 @@ def createDest(gridSize, placementType, board, player, shipID1, shipID2):
                     xLetter2 = strConvert(generateX)
                     str_correlate2 = f"({xLetter2},{generateY + 1})"
                     
-                    printBoard(board)
+               
 
                 elif generateY == (gridSize - 1):
 
@@ -272,7 +269,7 @@ def createDest(gridSize, placementType, board, player, shipID1, shipID2):
                     xLetter2 = strConvert(generateX)
                     str_correlate2 = f"({xLetter2},{generateY - 1})"
                     
-                    printBoard(board)
+          
 
                 else:
 
@@ -286,8 +283,7 @@ def createDest(gridSize, placementType, board, player, shipID1, shipID2):
                         board[generateX][generateY] = Fore.GREEN + "#" + Fore.RESET
                         xLetter2 = strConvert(generateX)
                         str_correlate2 = f"({xLetter2},{generateY + 1})"
-                        
-                        printBoard(board)
+                    
 
                     elif toporbottom == 1:
 
@@ -296,8 +292,7 @@ def createDest(gridSize, placementType, board, player, shipID1, shipID2):
                         board[generateX][generateY - 2] = Fore.GREEN + "#" + Fore.RESET
                         xLetter2 = strConvert(generateX)
                         str_correlate2 = f"({xLetter2},{generateY - 1})"
-                        printBoard(board)
-                        
+                 
                     
             coordlist = [str_correlate,str_correlate2]
             shipID1.update({destName: coordlist})
@@ -588,7 +583,7 @@ def createSub(gridSize, placementType, board, player, shipID1, shipID2):
                     xLetter2 = strConvert(generateX2 - 1)
                     str_correlate2 = f"({xLetter2},{generateY})"
 
-                    printBoard(board)
+                   
 
                 else:
 
@@ -609,7 +604,7 @@ def createSub(gridSize, placementType, board, player, shipID1, shipID2):
 
                         xLetter2 = strConvert(generateX2 - 1)
                         str_correlate2 = f"({xLetter2},{generateY})"
-                        printBoard(board)
+                
 
                     elif toporbottom == 1:
 
@@ -625,7 +620,7 @@ def createSub(gridSize, placementType, board, player, shipID1, shipID2):
                         xLetter2 = strConvert(generateX2 + 1)
                         str_correlate2 = f"({xLetter2},{generateY})"
                         
-                        printBoard(board)
+                   
 
             elif orientation == 0:
 
@@ -643,8 +638,7 @@ def createSub(gridSize, placementType, board, player, shipID1, shipID2):
                     xLetter2 = strConvert(generateX2)
                     str_correlate2 = f"({xLetter2},{generateY + 1})"
 
-                    printBoard(board)
-
+                  
                 elif generateY == (gridSize - 1):
 
                     #bottom
@@ -659,7 +653,7 @@ def createSub(gridSize, placementType, board, player, shipID1, shipID2):
                     xLetter2 = strConvert(generateX2)
                     str_correlate2 = f"({xLetter2},{generateY - 1})"
 
-                    printBoard(board)
+                 
 
                 else:
 
@@ -680,7 +674,7 @@ def createSub(gridSize, placementType, board, player, shipID1, shipID2):
                         xLetter2 = strConvert(generateX2)
                         str_correlate2 = f"({xLetter2},{generateY + 1})"
                         
-                        printBoard(board)
+                     
 
                     elif toporbottom == 1:
 
@@ -696,7 +690,7 @@ def createSub(gridSize, placementType, board, player, shipID1, shipID2):
 
                             xLetter2 = strConvert(generateX2)
                             str_correlate2 = f"({xLetter2},{generateY - 1})"
-                            printBoard(board)
+               
     
 
             coordlist = [str_correlate,str_correlate2]
@@ -842,7 +836,7 @@ def createSub(gridSize, placementType, board, player, shipID1, shipID2):
         if player == "Player 1":
 
             #Manual Placement
-            printBoard(board)
+           
             subName = input("\nName your second ship: ")
 
             # Converts coordinates to indexes, Letter[0] & number[1]
